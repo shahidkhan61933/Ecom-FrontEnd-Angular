@@ -1,0 +1,14 @@
+.container {
+    border: 2px solid rgb(3, 45, 3);
+    text-align: left;
+}
+
+.form-group {
+    text-align: left;
+    color: rgb(48, 3, 3);
+}
+
+.form-control {
+    border: 2px solid rgb(21, 22, 21);
+    text-align: left;
+}

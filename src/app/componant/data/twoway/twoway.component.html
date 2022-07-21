@@ -1,0 +1,8 @@
+<div class="container mt-5">
+
+    <h2 class="alert alert-info" [innerText]="message"></h2>
+    <input type="text" id="message" name="message" class="form-control" (input)="onInput($event)">
+
+    <h2 class="alert alert-info">{{text}}</h2>
+    <input type="text" id="text" name="text" class="form-control" [(ngModel)]="text">
+</div>

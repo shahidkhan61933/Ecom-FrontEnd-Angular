@@ -1,0 +1,119 @@
+<div class="container form-container">
+    <div class="alert alert-info" *ngIf="response !=''">{{response}}
+        <a class="badge bg-primary" routerLink="/auth/login"> Login here !</a>
+    </div>
+    <h1>Registration Form</h1>
+    <form class="form-validate" [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm)">
+        <div class="row">
+            <!-- First Name -->
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" name="name" formControlName="name" id="name" aria-describedby="nameHelp">
+                    <div *ngIf="hasError('name')" [class]="hasError('name') ? 'error' : ''">
+                        <div *ngIf="name?.errors">
+                            <span *ngIf="name?.errors?.['required']">First Name is a required field</span>
+                            <span *ngIf="name?.errors?.['minlength']">First Name should min 6 char long</span>
+                            <span *ngIf="name?.errors?.['maxlength']">First Name should be max 20 char long</span>
+                            <!-- <span *ngIf="firstName?.errors?.['pattern']">Please enter a valid firstName address</span> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Last Name -->
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="username">User Name</label>
+                    <input type="text" class="form-control" name="username" id="username" formControlName="username" aria-describedby="usernameHelp">
+                    <div *ngIf="hasError('username')" [class]="hasError('username') ? 'error' : ''">
+                        <div *ngIf="username?.errors">
+                            <span *ngIf="username?.errors?.['required']">username is a required field</span>
+                            <span *ngIf="username?.errors?.['minlength']">username should min 6 char long</span>
+                            <span *ngIf="username?.errors?.['maxlength']">username should be max 20 char long</span>
+                            <!-- <span *ngIf="firstName?.errors?.['pattern']">Please enter a valid firstName address</span> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Email -->
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" name="email" id="email" formControlName="email" aria-describedby="emailHelp">
+                    <div *ngIf="hasError('email')" [class]="hasError('email') ? 'error' : ''">
+                        <div *ngIf="email?.errors">
+                            <span *ngIf="email?.errors?.['required']">Email is a required field</span>
+                            <span *ngIf="email?.errors?.['email']">Please enter a valid email address</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Password -->
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" name="password" autocomplete="off" id="password" formControlName="password" aria-describedby="passwordHelp">
+                    <div *ngIf="hasError('password')" [class]="hasError('password') ? 'error' : ''">
+                        <div *ngIf="password?.errors">
+                            <span *ngIf="password?.errors?.['required']">Email is a required field</span>
+                            <span *ngIf="password?.errors?.['pattern']">Please enter a valid password</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group col-sm-6">
+                <label for="inputState">State</label>
+                <select id="inputState" name="state" class="form-control" formControlName="state">
+                    <option value="NY" selected>New York</option>
+                    <option value="TX">Texas</option>
+                    <option value="CA">California</option>
+                    <option value="HW">Hawaii</option>
+                </select>
+                <div *ngIf="hasError('state')" [class]="hasError('state') ? 'error' : ''">
+                    <div *ngIf="state?.errors">
+                        <span *ngIf="state?.errors?.['required']">State selection is a required field</span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <label for="zipcode">Zip</label>
+                <input type="number" class="form-control" name="zipcode" id="zipcode" formControlName="zipcode">
+                <div *ngIf="hasError('zipcode')" [class]="hasError('zipcode') ? 'error' : ''">
+                    <div *ngIf="zipcode?.errors">
+                        <span *ngIf="zipcode?.errors?.['required']">Zipcode is a required field</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="form-group col-sm-6">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="agree" name="agree" formControlName="agree">
+                    <label class="form-check-label" for="agree">
+                        Please check the  terms and conditions!
+                    </label>
+                    <div *ngIf="hasError('agree')" [class]="hasError('agree') ? 'error' : ''">
+                        <div *ngIf="agree?.errors">
+                            <span *ngIf="agree?.errors?.['required']">Please check the  terms and conditions!</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6">
+                <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+            <div class="col-3"></div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,10 @@
+.container {
+    border: 2px solid rgb(4, 40, 4);
+    padding: 40px;
+    width: 50%;
+}
+
+.error {
+    color: red;
+    font-style: italic;
+}

@@ -1,0 +1,9 @@
+<div class="container mt-5">
+    <h2 [class]="'bg-one'">class binding</h2>
+    <p [class]="'bg-two bg-three'">{{username}}</p>
+    <p [class]="BG.ON">{{email}} :: {{age}}</p>
+    <p [class]="BG.TH">{{email}}::{{age}}</p>
+    <p [class]="user.status ? BG.ON :BG.TW ">{{user | json}}</p>
+    <p [class]="user.status ? 'alert alert-primary ' : 'alert alert-warning'">{{user | json}}</p>
+    <button (click)="onChange()">ON CHANGE</button>
+</div>

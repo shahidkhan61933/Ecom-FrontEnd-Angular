@@ -1,0 +1,8 @@
+<div class="container">
+    <h2>Event Binding</h2>
+    <h2 class="alert alert-primary">{{username}}</h2>
+    <input type="text" name="username" id="username" class="form-control" (input)="onInput($event)">
+    <button [class]="isSubmitted? 'btn btn-success' : 'btn btn-secondary'" (click)="onSubmit()">Submit</button> <br><br><br>
+    <button [class]="isSubmitted? 'btn btn-success' : 'btn btn-secondary'" (dblclick)="onSubmit()">Double Click</button>
+
+</div>

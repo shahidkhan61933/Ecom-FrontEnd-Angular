@@ -1,0 +1,5 @@
+<h1 [innerText]="bannerTitle"></h1>
+<app-banner-view>
+</app-banner-view>
+<app-top-view [user]="user" [userList]="userList"></app-top-view>
+<app-recent-view (userEvent)="recievewData($event)"></app-recent-view>

@@ -1,0 +1,11 @@
+<div class="container mt-5">
+
+    <h2 [style.text-align]="'center'" [style.border]="'2px solid green'" [style.padding]="'30px'">{{title}}</h2>
+    <p [style.color]="'brown'" [style.font-size.px]="'30'">{{username}}::{{age}}</p>
+    <p [style.color]="colors.B" [style.font-size.px]="sizes.THIRTY" [style.padding.px]="sizes.THIRTY" [style.border-size]="sizes.TWO" [style.border-style]="'solid'" [style.border-color]="colors.B">
+        {{email}} :: {{isMarried}} </p>
+
+    <p [style.color]="isMarried ? colors.R : colors.B" [style.font-size.px]="'30'">{{user | json }} </p>
+
+    <button (click)="changeStyle()">Change Style</button>
+</div>
